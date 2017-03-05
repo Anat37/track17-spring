@@ -34,7 +34,7 @@ public class CountWords {
      * @return - целое число - сумма всех чисел из файла
      */
     public long countNumbers(File file) throws Exception {
-        int ans = 0;
+        long ans = 0;
         try (BufferedReader fileReader = new BufferedReader(new FileReader(file))) {
             String temp;
             while ((temp = fileReader.readLine()) != null) {
