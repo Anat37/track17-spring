@@ -1,5 +1,6 @@
 package track.lessons.lesson3;
 
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 /**
@@ -10,6 +11,7 @@ import java.util.NoSuchElementException;
  * Сейчас все методы помечены как abstract - эту метку можно убирать, если вы реализовываете его в этом классе
  */
 public abstract class List {
+    protected int size;
 
     /**
      * Добавить элемент в конец списка
@@ -35,7 +37,13 @@ public abstract class List {
     /**
      * Кол-во элементов списка
      */
-    abstract int size();
+    int size() {
+        return size;
+    }
 
-
+    protected void indexOkOrThrow(int idx) {
+        if (idx >= size || idx < 0) {
+            throw new NoSuchElementException();
+        }
+    }
 }
